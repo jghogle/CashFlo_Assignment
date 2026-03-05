@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────
+#  Cashflo AP Rule Pipeline — Configuration
+# ─────────────────────────────────────────────
+
+llm:
+  # Anthropic Claude API key — get one at https://console.anthropic.com
+  api_key: your-api-key-here
+  model: claude-3-haiku-20240307
+  # Set to false to always use cached rules (output/extracted_rules.json) — no API calls
+  use_llm: false
+
+policy:
+  # Path to the AP policy PDF (relative to this file, or absolute)
+  pdf_path: "../Sample_AP_Policy_Document.pdf"
+
+notifications:
+  # Set simulate: true to print emails to console instead of sending via SMTP
+  simulate: false
+  # Who the email comes from
+  from: "sender@gmail.com"
+  # Who receives every notification — one address or a list
+  to:
+    - "reciver@icloud.com"
+
+  smtp:
+    host: "smtp.gmail.com"
+    port: 465   # 465 = SSL (recommended), 587 = STARTTLS
+    user:        # same as 'from' for Gmail
+    password: # Gmail App Password

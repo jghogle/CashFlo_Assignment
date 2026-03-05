@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cashflo · AP Rule Pipeline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Cashflo brand tokens ─────────────────────────────── */
+    :root {
+      --cf-navy:        #1B307A;   /* sidebar bg          */
+      --cf-navy-hover:  #243d96;   /* sidebar hover       */
+      --cf-blue:        #3553C8;   /* primary / buttons   */
+      --cf-blue-dark:   #2B43A8;   /* button hover        */
+      --cf-coral:       #E86A5C;   /* active / accents    */
+      --cf-coral-dark:  #C9523F;   /* coral hover         */
+      --cf-blue-50:     #EEF1FB;   /* light blue bg       */
+      --cf-coral-50:    #FEF3F2;   /* light coral bg      */
+      --cf-blue-100:    #D6DEFF;
+      --cf-coral-100:   #FDDAD8;
+    }
+
+    body { font-family: 'Inter', sans-serif; background: #F4F6FC; }
+    code, pre, .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Sidebar */
+    .sidebar-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 14px; font-weight: 500;
+      transition: all 0.15s ease; cursor: pointer; width: 100%; text-align: left;
+    }
+    .sidebar-link.active {
+      background: var(--cf-coral); color: #fff;
+      box-shadow: 0 2px 10px rgba(232,106,92,0.35);
+    }
+    .sidebar-link:not(.active) { color: rgba(200,215,255,0.7); }
+    .sidebar-link:not(.active):hover { background: var(--cf-navy-hover); color: #fff; }
+
+    /* Cards & layout */
+    .card { background: #fff; border-radius: 14px; box-shadow: 0 1px 4px rgba(30,58,140,0.07); border: 1px solid rgba(53,83,200,0.08); padding: 20px; }
+    .badge { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; transition: all 0.15s; outline: none; }
+    .btn-primary { background: var(--cf-blue); color: #fff; }
+    .btn-primary:hover { background: var(--cf-blue-dark); }
+    .btn-primary:focus { box-shadow: 0 0 0 3px rgba(53,83,200,0.3); }
+    .btn-secondary { background: #fff; color: #374151; border: 1px solid #E5E7EB; }
+    .btn-secondary:hover { background: var(--cf-blue-50); border-color: var(--cf-blue); color: var(--cf-blue); }
+
+    /* Accents */
+    .rule-card:hover { box-shadow: 0 4px 20px rgba(53,83,200,0.12); }
+    .text-brand { color: var(--cf-blue); }
+    .text-coral { color: var(--cf-coral); }
+    .bg-brand { background: var(--cf-blue); }
+    .bg-coral { background: var(--cf-coral); }
+    .border-brand { border-color: var(--cf-blue); }
+    .border-coral { border-color: var(--cf-coral); }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--cf-blue) !important;
+      box-shadow: 0 0 0 3px rgba(53,83,200,0.15);
+    }
+
+    /* Scrollbar */
+    .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+    .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+    /* Animations */
+    [x-cloak] { display: none !important; }
+    .fade-in { animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+    .result-enter { animation: slideIn 0.3s ease; }
+    @keyframes slideIn { from { opacity:0; transform:translateX(16px); } to { opacity:1; transform:translateX(0); } }
+    .json-editor { font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.6; resize:vertical; }
+    .disposition-badge { font-size:1.15rem; font-weight:800; letter-spacing:0.06em; }
+
+    /* Category badge colours */
+    .badge-cf-blue    { background: var(--cf-blue-100); color: var(--cf-blue); }
+    .badge-cf-blue-lt { background: var(--cf-blue-50);  color: var(--cf-blue); }
+    .badge-cf-coral   { background: var(--cf-coral-100); color: var(--cf-coral-dark); }
+
+    /* Brand-tinted progress bars */
+    .bar-brand { background: var(--cf-blue); }
+    .bar-coral  { background: var(--cf-coral); }
+
+    /* Stat card left-border accent */
+    .stat-blue  { border-left: 4px solid var(--cf-blue); }
+    .stat-coral { border-left: 4px solid var(--cf-coral); }
+    .stat-green { border-left: 4px solid #10b981; }
+    .stat-amber { border-left: 4px solid #f59e0b; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        'cf-blue':  '#3553C8',
+        'cf-coral': '#E86A5C',
+        'cf-navy':  '#1B307A',
+      }}}
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-800" x-data="app()" x-init="init()" x-cloak>
+
+  <!-- ── Layout ── -->
+  <div class="flex h-screen overflow-hidden">
+
+    <!-- ══════════ SIDEBAR ══════════ -->
+    <aside style="width:236px;background:var(--cf-navy);flex-shrink:0" class="flex flex-col overflow-y-auto scrollbar-thin">
+      <!-- Logo -->
+      <div class="px-5 py-5" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:var(--cf-blue)">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <p class="text-white font-bold text-sm leading-none tracking-wide">Cashflo</p>
+            <p class="text-xs mt-0.5" style="color:rgba(200,215,255,0.55)">AP Rule Pipeline</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <nav class="flex-1 px-3 py-4 space-y-0.5">
+        <button @click="tab='dashboard'" :class="tab==='dashboard' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">📊</span> Dashboard
+        </button>
+        <button @click="tab='rules'" :class="tab==='rules' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">📋</span> Rules
+          <span class="ml-auto text-xs px-1.5 py-0.5 rounded-full font-semibold"
+            style="background:rgba(255,255,255,0.12);color:rgba(200,220,255,0.8)" x-text="rules.length"></span>
+        </button>
+        <button @click="tab='conflicts'" :class="tab==='conflicts' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">⚡</span> Conflicts
+          <span class="ml-auto text-xs px-1.5 py-0.5 rounded-full font-semibold"
+            style="background:rgba(232,106,92,0.25);color:#ffb3ab" x-text="conflicts.length"></span>
+        </button>
+        <button @click="tab='test'" :class="tab==='test' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">🧪</span> Test Invoice
+        </button>
+        <button @click="tab='history'" :class="tab==='history' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">📈</span> Past Runs
+        </button>
+        <button @click="tab='notifications'" :class="tab==='notifications' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">🔔</span> Notifications
+          <span x-show="notifications.length" class="ml-auto text-xs px-1.5 py-0.5 rounded-full font-semibold"
+            style="background:rgba(245,158,11,0.25);color:#fcd34d" x-text="notifications.length"></span>
+        </button>
+        <button @click="tab='policy'; loadPolicy()" :class="tab==='policy' ? 'active' : ''" class="sidebar-link">
+          <span class="text-base">📄</span> Policy Viewer
+        </button>
+      </nav>
+
+      <!-- Footer -->
+      <div class="px-5 py-4" style="border-top:1px solid rgba(255,255,255,0.08)">
+        <p class="text-xs" style="color:rgba(200,215,255,0.4)">AP Policy → Deterministic Rules</p>
+        <p class="text-xs mt-0.5" style="color:rgba(200,215,255,0.3)">Powered by Claude + FastAPI</p>
+      </div>
+    </aside>
+
+    <!-- ══════════ MAIN ══════════ -->
+    <main class="flex-1 overflow-y-auto">
+
+      <!-- Global loading -->
+      <div x-show="loading" class="flex items-center justify-center h-full">
+        <div class="text-center">
+          <div class="w-10 h-10 rounded-full animate-spin mx-auto mb-3"
+            style="border:4px solid #D6DEFF;border-top-color:var(--cf-blue)"></div>
+          <p class="text-slate-500 text-sm">Loading pipeline data…</p>
+        </div>
+      </div>
+
+      <div x-show="!loading" class="fade-in">
+
+        <!-- ══ DASHBOARD ══ -->
+        <div x-show="tab==='dashboard'" class="p-6 space-y-6">
+          <div>
+            <h1 class="text-xl font-bold text-slate-900">Dashboard</h1>
+            <p class="text-slate-500 text-sm mt-0.5">AP policy rule extraction overview</p>
+          </div>
+
+          <!-- Stat cards -->
+          <div class="grid grid-cols-2 xl:grid-cols-4 gap-4">
+            <div class="card stat-blue">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Total Rules</p>
+              <p class="text-3xl font-bold mt-1" style="color:var(--cf-blue)" x-text="metadata.total_rules || 0"></p>
+              <p class="text-xs text-slate-400 mt-1" x-text="Object.keys(metadata.by_category||{}).length + ' categories'"></p>
+            </div>
+            <div class="card stat-coral">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Conflicts</p>
+              <p class="text-3xl font-bold mt-1" style="color:var(--cf-coral)" x-text="metadata.total_conflicts || 0"></p>
+              <p class="text-xs text-slate-400 mt-1">Detected in policy</p>
+            </div>
+            <div class="card stat-amber">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Low Confidence</p>
+              <p class="text-3xl font-bold text-amber-500 mt-1" x-text="metadata.low_confidence_count || 0"></p>
+              <p class="text-xs text-slate-400 mt-1">Rules below 90%</p>
+            </div>
+            <div class="card stat-green">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Notifications</p>
+              <p class="text-3xl font-bold text-emerald-600 mt-1" x-text="notifications.length"></p>
+              <p class="text-xs text-slate-400 mt-1">In log</p>
+            </div>
+          </div>
+
+          <!-- Chart + Category breakdown -->
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <div class="card">
+              <h2 class="text-sm font-semibold text-slate-700 mb-4">Rules by Category</h2>
+              <div class="flex items-center justify-center" style="height:220px">
+                <canvas id="categoryChart"></canvas>
+              </div>
+            </div>
+            <div class="card">
+              <h2 class="text-sm font-semibold text-slate-700 mb-4">Category Breakdown</h2>
+              <div class="space-y-3">
+                  <template x-for="[cat, count] in Object.entries(metadata.by_category||{})" :key="cat">
+                  <div class="flex items-center gap-3">
+                    <span class="badge text-xs" :class="categoryColor(cat)" x-text="cat.replace(/_/g,' ')"></span>
+                    <div class="flex-1 bg-slate-100 rounded-full h-2">
+                      <div class="h-2 rounded-full transition-all" style="background:var(--cf-blue)" :style="`width:${(count/(metadata.total_rules||1))*100}%;background:var(--cf-blue)`"></div>
+                    </div>
+                    <span class="text-sm font-semibold text-slate-700 w-5 text-right" x-text="count"></span>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent conflicts preview -->
+          <div class="card" x-show="conflicts.length">
+            <h2 class="text-sm font-semibold text-slate-700 mb-3">Conflicts Snapshot</h2>
+            <div class="space-y-2">
+              <template x-for="c in conflicts.slice(0,3)" :key="c.conflict_id">
+                <div class="flex items-start gap-3 p-3 rounded-lg border" :class="severityBg(c.severity)">
+                  <span class="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" :class="severityDot(c.severity)"></span>
+                  <div>
+                    <p class="text-sm font-medium text-slate-800" x-text="c.title"></p>
+                    <p class="text-xs text-slate-500 mt-0.5" x-text="c.conflicting_rules.join(' · ')"></p>
+                  </div>
+                  <span class="ml-auto badge" :class="severityColor(c.severity)" x-text="c.severity"></span>
+                </div>
+              </template>
+            </div>
+            <button @click="tab='conflicts'" class="mt-3 text-xs font-medium hover:underline" style="color:var(--cf-coral)">View all conflicts →</button>
+          </div>
+        </div>
+
+        <!-- ══ RULES ══ -->
+        <div x-show="tab==='rules'" class="p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-xl font-bold text-slate-900">Extracted Rules</h1>
+              <p class="text-slate-500 text-sm mt-0.5" x-text="`${filteredRules.length} of ${rules.length} rules`"></p>
+            </div>
+            <div class="flex gap-2">
+              <a href="/api/download/rules" download="extracted_rules.json"
+                class="btn-primary flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                Download JSON
+              </a>
+            </div>
+          </div>
+
+          <!-- Filters -->
+          <div class="card py-3 px-4">
+            <div class="flex flex-wrap items-center gap-3">
+              <input x-model="rulesSearch" type="text" placeholder="Search rules, clauses, descriptions…"
+                class="flex-1 min-w-48 border border-slate-200 rounded-lg px-3 py-2 text-sm" />
+              <select x-model="rulesCategoryFilter" class="border border-slate-200 rounded-lg px-3 py-2 text-sm">
+                <option value="all">All Categories</option>
+                <template x-for="cat in categories" :key="cat">
+                  <option :value="cat" x-text="cat.replace(/_/g,' ')"></option>
+                </template>
+              </select>
+              <select x-model="rulesScopeFilter" class="border border-slate-200 rounded-lg px-3 py-2 text-sm">
+                <option value="all">All Scopes</option>
+                <option value="INVOICE">Invoice</option>
+                <option value="LINE_ITEM">Line Item</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Rule cards -->
+          <div class="space-y-3">
+            <template x-for="rule in filteredRules" :key="rule.rule_id">
+              <div class="card rule-card transition-shadow cursor-pointer" @click="rule._open = !rule._open">
+                <!-- Card header -->
+                <div class="flex items-start gap-3">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 mb-1">
+                      <span class="badge bg-slate-100 text-slate-700 font-mono text-xs" x-text="rule.rule_id"></span>
+                      <span class="badge" :class="categoryColor(rule.category)" x-text="rule.category.replace(/_/g,' ')"></span>
+                      <span class="badge bg-slate-50 text-slate-500 border border-slate-200 text-xs" x-text="rule.scope"></span>
+                      <span class="badge" :class="actionBadgeColor(rule.action)" x-text="rule.action"></span>
+                      <span x-show="rule.requires_justification" class="badge bg-red-50 text-red-600 border border-red-200 text-xs">⚠ justification required</span>
+                    </div>
+                    <p class="text-sm font-medium text-slate-800" x-text="rule.description"></p>
+                    <div class="flex items-center gap-4 mt-2">
+                      <span class="text-xs font-medium" style="color:var(--cf-blue)" x-text="rule.source_clause"></span>
+                      <span class="text-xs text-slate-400">Priority: <span class="font-semibold" x-text="rule.priority"></span></span>
+                      <div class="flex items-center gap-1.5">
+                        <span class="text-xs text-slate-400">Confidence:</span>
+                        <div class="w-16 bg-slate-100 rounded-full h-1.5">
+                          <div class="h-1.5 rounded-full transition-all" :class="rule.confidence >= 0.95 ? 'bg-green-500' : rule.confidence >= 0.90 ? 'bg-amber-400' : 'bg-red-400'"
+                            :style="`width:${(rule.confidence||0)*100}%`"></div>
+                        </div>
+                        <span class="text-xs font-semibold" :class="rule.confidence >= 0.95 ? 'text-green-600' : rule.confidence >= 0.90 ? 'text-amber-600' : 'text-red-500'"
+                          x-text="`${Math.round((rule.confidence||0)*100)}%`"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="text-slate-400 text-lg flex-shrink-0" x-text="rule._open ? '▲' : '▼'"></button>
+                </div>
+
+                <!-- Expanded detail -->
+                <div x-show="rule._open" x-transition class="mt-4 pt-4 border-t border-slate-100 grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <!-- Condition -->
+                  <div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Condition (IF)</p>
+                    <div class="bg-slate-50 rounded-lg p-3 text-xs leading-relaxed overflow-x-auto" x-html="renderCondition(rule.condition)"></div>
+                  </div>
+                  <!-- Action + Notification -->
+                  <div class="space-y-3">
+                    <div>
+                      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Action (THEN)</p>
+                      <div class="bg-slate-50 rounded-lg p-3 text-xs space-y-1">
+                        <div><span class="text-slate-500">Action:</span> <span class="font-semibold text-slate-800" x-text="rule.action"></span></div>
+                        <div x-show="rule.action_details?.status"><span class="text-slate-500">Status:</span> <span x-text="rule.action_details?.status"></span></div>
+                        <div x-show="rule.action_details?.route_to"><span class="text-slate-500">Route to:</span> <span class="font-medium" style="color:var(--cf-coral)" x-text="rule.action_details?.route_to"></span></div>
+                        <div x-show="rule.action_details?.reason" class="text-slate-600 italic" x-text="rule.action_details?.reason"></div>
+                      </div>
+                    </div>
+                    <div x-show="rule.notification">
+                      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Notification</p>
+                      <div class="bg-amber-50 rounded-lg p-3 text-xs border border-amber-100 space-y-1">
+                        <div>📧 <span class="font-medium" x-text="(rule.notification?.to||[]).join(', ')"></span></div>
+                        <div class="text-slate-500">Within <span class="font-semibold text-slate-700" x-text="rule.notification?.within_minutes"></span> minutes</div>
+                        <div class="text-slate-500" x-text="'Trigger: ' + (rule.notification?.trigger||'')" style="color:var(--cf-blue)!important"></div>
+                      </div>
+                    </div>
+                    <div x-show="rule.tags?.length" class="flex flex-wrap gap-1">
+                      <template x-for="tag in (rule.tags||[])" :key="tag">
+                        <span class="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded" x-text="tag"></span>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <div x-show="filteredRules.length === 0" class="text-center py-16 text-slate-400">
+              <p class="text-4xl mb-3">🔍</p>
+              <p class="font-medium">No rules match your filter</p>
+              <button @click="rulesSearch=''; rulesCategoryFilter='all'; rulesScopeFilter='all'" class="mt-2 text-sm hover:underline" style="color:var(--cf-blue)">Clear filters</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ CONFLICTS ══ -->
+        <div x-show="tab==='conflicts'" class="p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-xl font-bold text-slate-900">Conflict Analysis</h1>
+              <p class="text-slate-500 text-sm mt-0.5">Contradictory or overlapping rules detected in the policy</p>
+            </div>
+            <a href="/api/download/conflicts" download="conflicts.json"
+              class="btn-primary flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              Download JSON
+            </a>
+          </div>
+
+          <div class="space-y-4">
+            <template x-for="c in conflicts" :key="c.conflict_id">
+              <div class="card border-l-4" :class="severityBorder(c.severity)">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full flex-shrink-0 mt-0.5" :class="severityDot(c.severity)"></span>
+                    <span class="font-mono text-xs text-slate-400" x-text="c.conflict_id"></span>
+                  </div>
+                  <span class="badge" :class="severityColor(c.severity)" x-text="c.severity"></span>
+                </div>
+                <h3 class="font-semibold text-slate-800 mb-2" x-text="c.title"></h3>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-3">
+                  <div class="lg:col-span-2">
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Issue</p>
+                    <p class="text-sm text-slate-700 leading-relaxed" x-text="c.description"></p>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Conflicting Rules</p>
+                    <div class="flex flex-wrap gap-1.5">
+                      <template x-for="rid in c.conflicting_rules" :key="rid">
+                        <span class="badge bg-slate-100 text-slate-700 font-mono text-xs cursor-pointer"
+                        style="transition:.15s" @mouseenter="$el.style.background='var(--cf-blue-50)';$el.style.color='var(--cf-blue)'"
+                        @mouseleave="$el.style.background='';$el.style.color=''"
+                        @click="tab='rules'; rulesSearch=rid" x-text="rid"></span>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 pt-3 border-t border-slate-100">
+                  <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Example Scenario</p>
+                    <p class="text-sm text-slate-600 bg-slate-50 rounded-lg p-2.5 italic" x-text="c.example_scenario"></p>
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Recommendation</p>
+                    <p class="text-sm text-slate-700 bg-green-50 rounded-lg p-2.5 border border-green-100" x-text="c.recommendation"></p>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <div x-show="conflicts.length === 0" class="text-center py-16 text-slate-400">
+              <p class="text-4xl mb-3">✅</p>
+              <p class="font-medium">No conflicts detected</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ TEST INVOICE ══ -->
+        <div x-show="tab==='test'" class="p-6 h-full">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <h1 class="text-xl font-bold text-slate-900">Test Invoice</h1>
+              <p class="text-slate-500 text-sm mt-0.5">Paste an invoice JSON and run all extracted rules against it</p>
+            </div>
+            <div class="flex gap-2">
+              <button @click="loadSampleInvoice()" class="btn btn-secondary">↺ Load Sample</button>
+              <button @click="formatInvoiceJson()" class="btn btn-secondary">{ } Format</button>
+              <button @click="runEngine()" :disabled="engineLoading" class="btn btn-primary" :class="engineLoading ? 'opacity-70 cursor-not-allowed' : ''">
+                <span x-show="!engineLoading">▶ Run Engine</span>
+                <span x-show="engineLoading" class="flex items-center gap-2">
+                  <span class="w-3.5 h-3.5 rounded-full animate-spin" style="border:2px solid rgba(255,255,255,0.4);border-top-color:#fff"></span> Running…
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-5" style="min-height:70vh">
+            <!-- Editor -->
+            <div class="card flex flex-col">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Invoice JSON</p>
+              <textarea x-model="invoiceText" class="json-editor flex-1 w-full border border-slate-200 rounded-lg p-4 focus:outline-none bg-slate-50 text-slate-800"
+                rows="28" spellcheck="false" placeholder='{ "invoice_number": "INV-001", ... }'></textarea>
+            </div>
+
+            <!-- Results -->
+            <div class="card flex flex-col">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Engine Results</p>
+
+              <!-- Error -->
+              <div x-show="engineError" class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4 text-sm text-red-700" x-text="engineError"></div>
+
+              <!-- Placeholder -->
+              <div x-show="!engineResult && !engineError && !engineLoading" class="flex-1 flex items-center justify-center text-center text-slate-300">
+                <div>
+                  <p class="text-5xl mb-3">▶</p>
+                  <p class="font-medium text-slate-400">Run the engine to see results</p>
+                </div>
+              </div>
+
+              <!-- Results -->
+              <div x-show="engineResult" class="result-enter space-y-4 overflow-y-auto">
+                <!-- Disposition banner -->
+                <div class="rounded-xl p-4 border-2 text-center" :class="dispositionColor(engineResult?.disposition)">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-1 opacity-70">Final Disposition</p>
+                  <p class="disposition-badge" x-text="engineResult?.disposition"></p>
+                  <p x-show="engineResult?.final_approver" class="text-sm mt-1 opacity-75">
+                    Approver: <span class="font-semibold" x-text="engineResult?.final_approver"></span>
+                  </p>
+                </div>
+
+                <!-- Summary row -->
+                <div class="grid grid-cols-3 gap-3 text-center">
+                  <div class="bg-slate-50 rounded-lg p-3">
+                    <p class="text-2xl font-bold text-slate-900" x-text="engineResult?.triggered_rules?.length || 0"></p>
+                    <p class="text-xs text-slate-500 mt-0.5">Rules Triggered</p>
+                  </div>
+                  <div class="bg-slate-50 rounded-lg p-3">
+                    <p class="text-2xl font-bold text-slate-900" x-text="engineResult?.flags?.length || 0"></p>
+                    <p class="text-xs text-slate-500 mt-0.5">Flags Raised</p>
+                  </div>
+                  <div class="bg-amber-50 rounded-lg p-3">
+                    <p class="text-2xl font-bold text-amber-700" x-text="engineResult?.notifications_dispatched || 0"></p>
+                    <p class="text-xs text-amber-600 mt-0.5">Emails Sent</p>
+                  </div>
+                </div>
+
+                <!-- Flags -->
+                <div x-show="engineResult?.flags?.length">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Flags</p>
+                  <div class="space-y-1">
+                    <template x-for="flag in (engineResult?.flags||[])" :key="flag">
+                      <div class="flex items-start gap-2 text-sm bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+                        <span class="text-amber-500 flex-shrink-0">⚠</span>
+                        <span class="text-amber-800" x-text="flag"></span>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+
+                <!-- Triggered rules -->
+                <div x-show="engineResult?.triggered_rules?.length">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Triggered Rules</p>
+                  <div class="space-y-2">
+                    <template x-for="r in (engineResult?.triggered_rules||[])" :key="r.rule_id + (r.line_item_id||'')">
+                      <div class="text-sm bg-slate-50 rounded-lg p-3 border border-slate-100">
+                        <div class="flex items-center gap-2 mb-1 flex-wrap">
+                          <span class="badge bg-slate-200 text-slate-700 font-mono text-xs" x-text="r.rule_id"></span>
+                          <span class="text-xs font-medium" style="color:var(--cf-blue)" x-text="r.source_clause"></span>
+                          <span class="badge text-xs" :class="actionBadgeColor(r.action)" x-text="r.action"></span>
+                          <span x-show="r.line_item_id" class="badge bg-cyan-50 text-cyan-700 text-xs" x-text="'Line ' + r.line_item_id"></span>
+                          <span x-show="r.requires_justification" class="badge bg-red-50 text-red-600 text-xs">📝 justification needed</span>
+                        </div>
+                        <p class="text-slate-600 text-xs" x-text="r.reason"></p>
+                        <p x-show="r.route_to" class="text-xs text-slate-500 mt-1">→ <span class="font-medium" style="color:var(--cf-coral)" x-text="r.route_to"></span></p>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+
+                <!-- Key derived fields -->
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Derived Fields</p>
+                  <div class="bg-slate-50 rounded-lg p-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs mono">
+                    <template x-for="[k,v] in keyDerived(engineResult?.derived_fields)" :key="k">
+                      <div class="flex justify-between gap-2">
+                        <span class="text-slate-500" x-text="k"></span>
+                        <span class="font-semibold text-slate-800" :class="v === true ? 'text-red-600' : v === false ? 'text-green-600' : ''"
+                          x-text="typeof v === 'number' ? v.toFixed(2) : String(v)"></span>
+                      </div>
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ PAST RUNS ══ -->
+        <div x-show="tab==='history'" class="p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-xl font-bold text-slate-900">Past Runs</h1>
+              <p class="text-slate-500 text-sm mt-0.5">Engine execution results from the pipeline</p>
+            </div>
+            <button @click="loadHistory()" class="btn btn-secondary">↺ Refresh</button>
+          </div>
+          <div class="space-y-4">
+            <template x-for="run in history" :key="run.invoice_id + run.scenario">
+              <div class="card">
+                <div class="flex items-start justify-between mb-3">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="font-mono text-sm font-semibold text-slate-700" x-text="run.invoice_id"></span>
+                      <span class="badge text-sm font-semibold px-3 py-1" :class="dispositionColor(run.disposition)" x-text="run.disposition"></span>
+                    </div>
+                    <p class="text-xs text-slate-500" x-text="run.scenario"></p>
+                  </div>
+                  <span x-show="run.final_approver" class="text-xs font-semibold" style="color:var(--cf-coral)" x-text="'→ ' + run.final_approver"></span>
+                </div>
+                <div class="flex flex-wrap gap-3 text-xs text-slate-500">
+                  <span x-text="`${run.triggered_rules?.length || 0} rules triggered`"></span>
+                  <span>·</span>
+                  <span x-text="`${run.flags?.length || 0} flags`"></span>
+                  <span>·</span>
+                  <span x-text="`${run.notifications_dispatched || 0} notifications`"></span>
+                </div>
+                <div x-show="run.triggered_rules?.length" class="mt-3 flex flex-wrap gap-1">
+                  <template x-for="r in (run.triggered_rules||[]).slice(0,5)" :key="r.rule_id">
+                    <span class="badge bg-slate-100 text-slate-600 font-mono text-xs" x-text="r.rule_id"></span>
+                  </template>
+                  <span x-show="(run.triggered_rules||[]).length > 5" class="badge bg-slate-100 text-slate-500 text-xs"
+                    x-text="'+' + ((run.triggered_rules||[]).length - 5) + ' more'"></span>
+                </div>
+              </div>
+            </template>
+            <div x-show="!history.length" class="text-center py-16 text-slate-400">
+              <p class="text-4xl mb-3">📭</p>
+              <p class="font-medium">No past runs found</p>
+              <p class="text-sm mt-1">Run the pipeline via CLI or the Test Invoice tab</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ NOTIFICATIONS ══ -->
+        <div x-show="tab==='notifications'" class="p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-xl font-bold text-slate-900">Notification Log</h1>
+              <p class="text-slate-500 text-sm mt-0.5" x-text="`${notifications.length} notifications dispatched`"></p>
+            </div>
+            <button @click="loadNotifications()" class="btn btn-secondary">↺ Refresh</button>
+          </div>
+
+          <div class="space-y-3">
+            <template x-for="(n, i) in notifications" :key="i">
+              <div class="card hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between gap-3 mb-2">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-lg">📧</span>
+                    <span class="font-medium text-sm text-slate-800" x-text="n.subject"></span>
+                  </div>
+                  <div class="flex gap-2 flex-shrink-0">
+                    <span x-show="n.simulated" class="badge bg-slate-100 text-slate-500 text-xs">simulated</span>
+                    <span class="badge text-xs" :class="n.delivered ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'"
+                      x-text="n.delivered ? '✓ Delivered' : '✗ Failed'"></span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 text-xs text-slate-500 mt-2">
+                  <div><span class="font-medium text-slate-700">Invoice:</span> <span x-text="n.invoice_id"></span></div>
+                  <div><span class="font-medium text-slate-700">Rule:</span> <span class="font-mono" x-text="n.triggered_by"></span></div>
+                  <div class="lg:col-span-2"><span class="font-medium text-slate-700">To:</span> <span x-text="(n.recipients||[]).join(', ')"></span></div>
+                </div>
+                <div class="mt-2 bg-slate-50 rounded p-2.5 text-xs text-slate-600 mono leading-relaxed line-clamp-3" x-text="n.body_preview"></div>
+                <p class="text-xs text-slate-400 mt-2" x-text="new Date(n.timestamp).toLocaleString()"></p>
+              </div>
+            </template>
+
+            <div x-show="!notifications.length" class="text-center py-16 text-slate-400">
+              <p class="text-4xl mb-3">🔕</p>
+              <p class="font-medium">No notifications yet</p>
+              <p class="text-sm mt-1">Run the engine on an invoice to generate notifications</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ POLICY VIEWER ══ -->
+        <div x-show="tab==='policy'" class="p-6 space-y-4">
+          <div>
+            <h1 class="text-xl font-bold text-slate-900">Policy Viewer</h1>
+            <p class="text-slate-500 text-sm mt-0.5">Parsed AP policy document — sections and numbered clauses</p>
+          </div>
+
+          <div x-show="!policyDoc" class="flex justify-center py-16">
+            <div class="w-8 h-8 rounded-full animate-spin" style="border:4px solid #D6DEFF;border-top-color:var(--cf-blue)"></div>
+          </div>
+
+          <div x-show="policyDoc" class="space-y-4">
+            <div class="card" style="background:var(--cf-blue-50);border-color:var(--cf-blue-100)">
+              <h2 class="font-semibold" style="color:var(--cf-navy)" x-text="policyDoc?.title"></h2>
+              <p class="text-xs mt-1" style="color:var(--cf-blue)" x-text="`${policyDoc?.sections?.length || 0} sections extracted`"></p>
+            </div>
+
+            <template x-for="section in (policyDoc?.sections||[])" :key="section.number">
+              <div class="card">
+                <button class="w-full text-left" @click="section._open = !section._open">
+                  <div class="flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg" style="background:var(--cf-blue-100);color:var(--cf-blue) flex items-center justify-center font-bold text-sm flex-shrink-0" x-text="section.number"></span>
+                    <div class="flex-1">
+                      <p class="font-semibold text-slate-800" x-text="section.title"></p>
+                      <p class="text-xs text-slate-400 mt-0.5" x-text="`${section.clauses?.length || 0} clauses`"></p>
+                    </div>
+                    <span class="text-slate-400" x-text="section._open ? '▲' : '▼'"></span>
+                  </div>
+                </button>
+
+                <div x-show="section._open" x-transition class="mt-4 space-y-3">
+                  <template x-for="clause in (section.clauses||[])" :key="clause.number">
+                    <div class="flex gap-3 pl-3 border-l-2" style="border-color:var(--cf-blue-100)">
+                      <span class="font-mono text-xs font-semibold flex-shrink-0 pt-0.5" style="color:var(--cf-blue)" x-text="clause.number"></span>
+                      <div class="flex-1">
+                        <p class="text-sm text-slate-700 leading-relaxed" x-text="clause.text"></p>
+                        <div x-show="clause.cross_refs?.length" class="flex gap-1 mt-1 flex-wrap">
+                          <span class="text-xs text-slate-400">Cross-refs:</span>
+                          <template x-for="ref in (clause.cross_refs||[])" :key="ref">
+                            <span class="badge text-xs font-mono" style="background:var(--cf-blue-50);color:var(--cf-blue)" x-text="'§' + ref"></span>
+                          </template>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+
+      </div><!-- /!loading -->
+    </main>
+  </div><!-- /layout -->
+
+  <script>
+  function app() {
+    return {
+      tab: 'dashboard',
+      loading: true,
+
+      rules: [],
+      conflicts: [],
+      metadata: {},
+      notifications: [],
+      policyDoc: null,
+      history: [],
+
+      rulesSearch: '',
+      rulesCategoryFilter: 'all',
+      rulesScopeFilter: 'all',
+
+      invoiceText: '',
+      engineResult: null,
+      engineLoading: false,
+      engineError: null,
+
+      chart: null,
+
+      get filteredRules() {
+        let r = this.rules;
+        if (this.rulesSearch) {
+          const q = this.rulesSearch.toLowerCase();
+          r = r.filter(x =>
+            (x.rule_id||'').toLowerCase().includes(q) ||
+            (x.description||'').toLowerCase().includes(q) ||
+            (x.source_clause||'').toLowerCase().includes(q) ||
+            (x.action||'').toLowerCase().includes(q)
+          );
+        }
+        if (this.rulesCategoryFilter !== 'all')
+          r = r.filter(x => x.category === this.rulesCategoryFilter);
+        if (this.rulesScopeFilter !== 'all')
+          r = r.filter(x => x.scope === this.rulesScopeFilter);
+        return r;
+      },
+
+      get categories() {
+        return [...new Set(this.rules.map(r => r.category))].sort();
+      },
+
+      async init() {
+        await this.loadAll();
+        this.loading = false;
+        await this.$nextTick();
+        this.initChart();
+      },
+
+      async loadAll() {
+        try {
+          const [rR, cR, mR, nR, sR, hR] = await Promise.all([
+            fetch('/api/rules'), fetch('/api/conflicts'), fetch('/api/metadata'),
+            fetch('/api/notifications'), fetch('/api/sample-invoice'), fetch('/api/engine-results'),
+          ]);
+          this.rules      = (await rR.json()).rules || [];
+          this.conflicts  = (await cR.json()).conflicts || [];
+          this.metadata   = await mR.json();
+          this.notifications = (await nR.json()).notifications || [];
+          const sample    = await sR.json();
+          if (sample && Object.keys(sample).length) this.invoiceText = JSON.stringify(sample, null, 2);
+          const hist      = await hR.json();
+          this.history    = hist.results || [];
+        } catch(e) { console.error('Load error:', e); }
+      },
+
+      async loadNotifications() {
+        const r = await fetch('/api/notifications');
+        this.notifications = (await r.json()).notifications || [];
+      },
+
+      async loadHistory() {
+        const r = await fetch('/api/engine-results');
+        const d = await r.json();
+        this.history = d.results || [];
+      },
+
+      async loadPolicy() {
+        if (this.policyDoc) return;
+        try {
+          const r = await fetch('/api/parse');
+          this.policyDoc = await r.json();
+        } catch(e) { console.error('Policy error:', e); }
+      },
+
+      async loadSampleInvoice() {
+        const r = await fetch('/api/sample-invoice');
+        const s = await r.json();
+        this.invoiceText = JSON.stringify(s, null, 2);
+        this.engineResult = null;
+        this.engineError = null;
+      },
+
+      formatInvoiceJson() {
+        try { this.invoiceText = JSON.stringify(JSON.parse(this.invoiceText), null, 2); } catch(e) {}
+      },
+
+      async runEngine() {
+        this.engineLoading = true;
+        this.engineError = null;
+        this.engineResult = null;
+        try {
+          let invoice;
+          try { invoice = JSON.parse(this.invoiceText); }
+          catch(e) { throw new Error('Invalid JSON: ' + e.message); }
+          const res = await fetch('/api/run', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(invoice),
+          });
+          if (!res.ok) { const e = await res.json(); throw new Error(e.detail||'Engine error'); }
+          this.engineResult = await res.json();
+          await this.loadNotifications();
+        } catch(e) { this.engineError = e.message; }
+        finally { this.engineLoading = false; }
+      },
+
+      keyDerived(fields) {
+        if (!fields) return [];
+        const keys = ['amount_deviation_pct','abs_amount_deviation_pct','abs_tax_calculation_error',
+                      'has_compliance_failure','has_three_way_match_deviation','all_validations_passed'];
+        return keys.filter(k => k in fields).map(k => [k, fields[k]]);
+      },
+
+      // ── Chart ──
+      initChart() {
+        const canvas = document.getElementById('categoryChart');
+        if (!canvas || this.chart) return;
+        const byCat = this.metadata.by_category || {};
+        const labels = Object.keys(byCat);
+        const data   = Object.values(byCat);
+        const palette = ['#3553C8','#E86A5C','#06b6d4','#8b5cf6','#10b981','#f59e0b','#ec4899','#64748b'];
+        this.chart = new Chart(canvas, {
+          type: 'doughnut',
+          data: { labels, datasets: [{ data, backgroundColor: palette.slice(0, labels.length), borderWidth: 0 }] },
+          options: {
+            responsive: true, maintainAspectRatio: true,
+            plugins: { legend: { position: 'bottom', labels: { padding: 12, usePointStyle: true, font: { size: 11 } } } },
+            cutout: '62%',
+          }
+        });
+      },
+
+      // ── Color helpers ──
+      categoryColor(cat) {
+        // Uses inline style overrides; Tailwind classes give the base shape
+        const map = {
+          BASIC_VALIDATION:        'badge-cf-blue',
+          PO_MATCHING:             'badge-cf-blue-lt',
+          GRN_MATCHING:            'bg-cyan-100 text-cyan-700',
+          TAX_COMPLIANCE:          'bg-purple-100 text-purple-700',
+          APPROVAL_MATRIX:         'bg-emerald-100 text-emerald-700',
+          DEVIATION_NOTIFICATIONS: 'badge-cf-coral',
+          QR_VALIDATION:           'bg-pink-100 text-pink-700',
+        };
+        return map[cat] || 'bg-gray-100 text-gray-700';
+      },
+
+      actionBadgeColor(action) {
+        if (!action) return 'bg-gray-100 text-gray-500';
+        if (action.includes('REJECT'))              return 'bg-red-100 text-red-700';
+        if (action.includes('HOLD')||action.includes('COMPLIANCE')) return 'bg-orange-100 text-orange-700';
+        if (action.includes('ESCALATE'))            return 'bg-yellow-100 text-yellow-800';
+        if (action.includes('FLAG'))                return 'bg-amber-100 text-amber-700';
+        if (action.includes('AUTO'))                return 'bg-green-100 text-green-700';
+        if (action.includes('ROUTE')||action.includes('APPROVAL')) return 'bg-blue-100 text-blue-700';
+        if (action.includes('NOTIF'))               return 'bg-purple-100 text-purple-700';
+        return 'bg-slate-100 text-slate-600';
+      },
+
+      dispositionColor(d) {
+        return {
+          AUTO_APPROVED:   'bg-green-50 text-green-800 border-green-300',
+          REJECTED:        'bg-red-50 text-red-800 border-red-300',
+          HELD:            'bg-orange-50 text-orange-800 border-orange-300',
+          ESCALATED:       'bg-yellow-50 text-yellow-900 border-yellow-300',
+          FLAGGED:         'bg-amber-50 text-amber-800 border-amber-300',
+          PENDING_APPROVAL:'bg-blue-50 text-blue-800 border-blue-300',
+        }[d] || 'bg-slate-50 text-slate-700 border-slate-200';
+      },
+
+      severityColor(s) {
+        return { HIGH:'bg-red-100 text-red-700 border-red-200', MEDIUM:'bg-amber-100 text-amber-700 border-amber-200', LOW:'bg-green-100 text-green-700 border-green-200' }[s] || 'bg-gray-100 text-gray-600';
+      },
+      severityDot(s)    { return { HIGH:'bg-red-500', MEDIUM:'bg-amber-500', LOW:'bg-green-500' }[s] || 'bg-gray-400'; },
+      severityBg(s)     { return { HIGH:'border-red-200 bg-red-50', MEDIUM:'border-amber-200 bg-amber-50', LOW:'border-green-200 bg-green-50' }[s] || 'border-gray-200'; },
+      severityBorder(s) { return { HIGH:'border-red-500', MEDIUM:'border-amber-400', LOW:'border-green-500' }[s] || 'border-gray-300'; },
+
+      // ── Condition tree renderer ──
+      renderCondition(cond, depth) {
+        depth = depth || 0;
+        if (!cond) return '<span class="text-slate-400 text-xs">—</span>';
+        const ml = depth * 14;
+        if (cond.operator) {
+          const opColor = { AND:'#2563eb', OR:'#7c3aed', NOT:'#dc2626' }[cond.operator] || '#374151';
+          let html = `<div style="margin-left:${ml}px"><span style="color:${opColor};font-weight:700;font-family:monospace">${cond.operator}</span></div>`;
+          for (const op of (cond.operands || [])) html += this.renderCondition(op, depth + 1);
+          return html;
+        }
+        const valHtml = cond.expr
+          ? `<em style="color:#059669;font-style:normal;font-weight:500">${cond.expr}</em>`
+          : cond.value_field
+            ? `<em style="color:#7c3aed;font-style:normal;font-weight:500">${cond.value_field}</em>`
+            : `<span style="color:#dc2626;font-weight:500">${JSON.stringify(cond.value)}</span>`;
+        return `<div style="margin-left:${ml}px;margin-top:3px;font-family:monospace;font-size:12px;white-space:nowrap">
+          <span style="color:#1e40af">${cond.field}</span>
+          <span style="color:#64748b;margin:0 5px">${cond.op}</span>${valHtml}</div>`;
+      },
+    }
+  }
+  </script>
+</body>
+</html>

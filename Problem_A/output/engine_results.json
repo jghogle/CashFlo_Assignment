@@ -1,0 +1,429 @@
+{
+  "generated_at": "2026-03-04T23:59:16.480489",
+  "results": [
+    {
+      "scenario": "SCENARIO_1: Over-invoiced (12% above PO) \u2014 triggers escalation to Finance Controller",
+      "invoice_id": "INV-2026-001",
+      "disposition": "REJECTED",
+      "final_approver": null,
+      "flags": [
+        "Taxable Amount + Tax Amount does not equal Grand Total (variance > INR 1)"
+      ],
+      "fired_actions": [
+        "AP-PO-004 \u2192 ESCALATE",
+        "AP-TAX-003 \u2192 FLAG_ERROR",
+        "AP-APR-002 \u2192 ROUTE_FOR_APPROVAL",
+        "AP-NOT-004 \u2192 SEND_CRITICAL_NOTIFICATION",
+        "AP-NOT-001 \u2192 SEND_NOTIFICATION",
+        "AP-PO-006 \u2192 HOLD",
+        "AP-GRN-002 \u2192 REJECT"
+      ],
+      "triggered_rules": [
+        {
+          "rule_id": "AP-PO-004",
+          "source_clause": "Section 2.2(c)",
+          "action": "ESCALATE",
+          "reason": "Invoice amount exceeds PO by 10% or more \u2014 mandatory justification required",
+          "route_to": "FINANCE_CONTROLLER",
+          "requires_justification": true,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-TAX-003",
+          "source_clause": "Section 4.3(a)",
+          "action": "FLAG_ERROR",
+          "reason": "Taxable Amount + Tax Amount does not equal Grand Total (variance > INR 1)",
+          "route_to": "AP_CLERK",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-APR-002",
+          "source_clause": "Section 5.2",
+          "action": "ROUTE_FOR_APPROVAL",
+          "reason": "Invoice amount between INR 1L and INR 10L requires Department Head approval",
+          "route_to": "DEPARTMENT_HEAD",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-NOT-004",
+          "source_clause": "Section 6.4",
+          "action": "SEND_CRITICAL_NOTIFICATION",
+          "reason": "Critical deviation: amount variance > 10% or compliance failure detected",
+          "route_to": [
+            "FINANCE_CONTROLLER",
+            "INTERNAL_AUDIT"
+          ],
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-NOT-001",
+          "source_clause": "Section 6.1",
+          "action": "SEND_NOTIFICATION",
+          "reason": null,
+          "route_to": "RELEVANT_STAKEHOLDER",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-PO-006",
+          "source_clause": "Section 2.3(b)",
+          "action": "HOLD",
+          "reason": "Invoice quantity exceeds PO quantity for one or more line items",
+          "route_to": "PROCUREMENT",
+          "requires_justification": false,
+          "scope": "LINE_ITEM",
+          "line_item_id": 1
+        },
+        {
+          "rule_id": "AP-GRN-002",
+          "source_clause": "Section 3.2(b)",
+          "action": "REJECT",
+          "reason": "Invoice Qty Exceeds Received Qty",
+          "route_to": null,
+          "requires_justification": false,
+          "scope": "LINE_ITEM",
+          "line_item_id": 1
+        }
+      ],
+      "errors": [],
+      "derived_fields": {
+        "amount_deviation_pct": 12.0,
+        "abs_amount_deviation_pct": 12.0,
+        "abs_tax_calculation_error": 1000,
+        "gstin_embedded_pan": "ABCDE1234F",
+        "buyer_gstin_state_code": "29",
+        "has_compliance_failure": true,
+        "has_three_way_match_deviation": true,
+        "has_unresolved_deviation": false,
+        "deviation_age_hours": 0,
+        "notification_sent": false,
+        "existing_invoice_number": null,
+        "existing_invoice_vendor_gstin": null,
+        "all_validations_passed": false
+      },
+      "notifications_dispatched": 5
+    },
+    {
+      "scenario": "SCENARIO_2: Clean invoice \u2014 should AUTO_APPROVE",
+      "invoice_id": "INV-2026-002",
+      "disposition": "AUTO_APPROVED",
+      "final_approver": null,
+      "flags": [],
+      "fired_actions": [
+        "AP-PO-002 \u2192 AUTO_APPROVE",
+        "AP-APR-001 \u2192 AUTO_APPROVE"
+      ],
+      "triggered_rules": [
+        {
+          "rule_id": "AP-PO-002",
+          "source_clause": "Section 2.2(a)",
+          "action": "AUTO_APPROVE",
+          "reason": "Invoice amount within +/- 1% tolerance of PO amount",
+          "route_to": null,
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-APR-001",
+          "source_clause": "Section 5.1",
+          "action": "AUTO_APPROVE",
+          "reason": "Invoice amount within auto-approval threshold and all validations passed",
+          "route_to": null,
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        }
+      ],
+      "errors": [],
+      "derived_fields": {
+        "amount_deviation_pct": 0.5,
+        "abs_amount_deviation_pct": 0.5,
+        "abs_tax_calculation_error": 0,
+        "gstin_embedded_pan": "XYZST5678H",
+        "buyer_gstin_state_code": "27",
+        "has_compliance_failure": false,
+        "has_three_way_match_deviation": false,
+        "has_unresolved_deviation": false,
+        "deviation_age_hours": 0,
+        "notification_sent": false,
+        "existing_invoice_number": null,
+        "existing_invoice_vendor_gstin": null,
+        "all_validations_passed": true
+      },
+      "notifications_dispatched": 0
+    },
+    {
+      "scenario": "SCENARIO_3: GSTIN mismatch + tax error + inter-state IGST missing",
+      "invoice_id": "INV-2026-003",
+      "disposition": "REJECTED",
+      "final_approver": null,
+      "flags": [
+        "Taxable Amount + Tax Amount does not equal Grand Total (variance > INR 1)",
+        "Invoice unit rate differs from PO unit rate by more than 2%",
+        "GRN date is after invoice date",
+        "Inter-state supply must have IGST only; CGST and SGST must be zero"
+      ],
+      "fired_actions": [
+        "AP-PO-003 \u2192 ROUTE_FOR_APPROVAL",
+        "AP-GRN-003 \u2192 FLAG_WARNING",
+        "AP-TAX-001 \u2192 REJECT",
+        "AP-TAX-002 \u2192 COMPLIANCE_HOLD",
+        "AP-TAX-003 \u2192 FLAG_ERROR",
+        "AP-TAX-005 \u2192 FLAG_ERROR",
+        "AP-APR-005 \u2192 ROUTE_FOR_APPROVAL",
+        "AP-APR-002 \u2192 ROUTE_FOR_APPROVAL",
+        "AP-NOT-004 \u2192 SEND_CRITICAL_NOTIFICATION",
+        "AP-NOT-001 \u2192 SEND_NOTIFICATION",
+        "AP-PO-006 \u2192 HOLD",
+        "AP-PO-007 \u2192 FLAG_AND_ROUTE",
+        "AP-GRN-002 \u2192 REJECT"
+      ],
+      "triggered_rules": [
+        {
+          "rule_id": "AP-PO-003",
+          "source_clause": "Section 2.2(b)",
+          "action": "ROUTE_FOR_APPROVAL",
+          "reason": "Invoice amount exceeds PO by 1%\u201310%",
+          "route_to": "DEPARTMENT_HEAD",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-GRN-003",
+          "source_clause": "Section 3.3",
+          "action": "FLAG_WARNING",
+          "reason": "GRN date is after invoice date",
+          "route_to": "AP_CLERK",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-TAX-001",
+          "source_clause": "Section 4.1",
+          "action": "REJECT",
+          "reason": "GSTIN Mismatch \u2014 Update Vendor Master or Verify Invoice",
+          "route_to": null,
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-TAX-002",
+          "source_clause": "Section 4.2",
+          "action": "COMPLIANCE_HOLD",
+          "reason": "PAN embedded in GSTIN does not match PAN on file",
+          "route_to": "COMPLIANCE_TEAM",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-TAX-003",
+          "source_clause": "Section 4.3(a)",
+          "action": "FLAG_ERROR",
+          "reason": "Taxable Amount + Tax Amount does not equal Grand Total (variance > INR 1)",
+          "route_to": "AP_CLERK",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-TAX-005",
+          "source_clause": "Section 4.3(c)",
+          "action": "FLAG_ERROR",
+          "reason": "Inter-state supply must have IGST only; CGST and SGST must be zero",
+          "route_to": "AP_CLERK",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-APR-005",
+          "source_clause": "Section 5.5",
+          "action": "ROUTE_FOR_APPROVAL",
+          "reason": "Vendor is on Watch List \u2014 Department Head approval required regardless of invoice amount",
+          "route_to": "DEPARTMENT_HEAD",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-APR-002",
+          "source_clause": "Section 5.2",
+          "action": "ROUTE_FOR_APPROVAL",
+          "reason": "Invoice amount between INR 1L and INR 10L requires Department Head approval",
+          "route_to": "DEPARTMENT_HEAD",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-NOT-004",
+          "source_clause": "Section 6.4",
+          "action": "SEND_CRITICAL_NOTIFICATION",
+          "reason": "Critical deviation: amount variance > 10% or compliance failure detected",
+          "route_to": [
+            "FINANCE_CONTROLLER",
+            "INTERNAL_AUDIT"
+          ],
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-NOT-001",
+          "source_clause": "Section 6.1",
+          "action": "SEND_NOTIFICATION",
+          "reason": null,
+          "route_to": "RELEVANT_STAKEHOLDER",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-PO-006",
+          "source_clause": "Section 2.3(b)",
+          "action": "HOLD",
+          "reason": "Invoice quantity exceeds PO quantity for one or more line items",
+          "route_to": "PROCUREMENT",
+          "requires_justification": false,
+          "scope": "LINE_ITEM",
+          "line_item_id": 1
+        },
+        {
+          "rule_id": "AP-PO-007",
+          "source_clause": "Section 2.3(c)",
+          "action": "FLAG_AND_ROUTE",
+          "reason": "Invoice unit rate differs from PO unit rate by more than 2%",
+          "route_to": "PROCUREMENT",
+          "requires_justification": false,
+          "scope": "LINE_ITEM",
+          "line_item_id": 1
+        },
+        {
+          "rule_id": "AP-GRN-002",
+          "source_clause": "Section 3.2(b)",
+          "action": "REJECT",
+          "reason": "Invoice Qty Exceeds Received Qty",
+          "route_to": null,
+          "requires_justification": false,
+          "scope": "LINE_ITEM",
+          "line_item_id": 1
+        }
+      ],
+      "errors": [],
+      "derived_fields": {
+        "amount_deviation_pct": 4.0,
+        "abs_amount_deviation_pct": 4.0,
+        "abs_tax_calculation_error": 339,
+        "gstin_embedded_pan": "ROGUE9999Z",
+        "buyer_gstin_state_code": "27",
+        "has_compliance_failure": true,
+        "has_three_way_match_deviation": true,
+        "has_unresolved_deviation": false,
+        "deviation_age_hours": 0,
+        "notification_sent": false,
+        "existing_invoice_number": null,
+        "existing_invoice_vendor_gstin": null,
+        "all_validations_passed": false
+      },
+      "notifications_dispatched": 8
+    },
+    {
+      "scenario": "SCENARIO_4: High-value invoice (>50L) \u2014 requires CFO approval + QR code",
+      "invoice_id": "INV-2026-004",
+      "disposition": "HELD",
+      "final_approver": "AP_CLERK",
+      "flags": [
+        "Digital signature is present but invalid \u2014 manual review required"
+      ],
+      "fired_actions": [
+        "AP-PO-002 \u2192 AUTO_APPROVE",
+        "AP-QR-001 \u2192 HOLD",
+        "AP-QR-003 \u2192 FLAG_WARNING",
+        "AP-APR-004 \u2192 ROUTE_FOR_APPROVAL",
+        "AP-PO-006 \u2192 HOLD"
+      ],
+      "triggered_rules": [
+        {
+          "rule_id": "AP-PO-002",
+          "source_clause": "Section 2.2(a)",
+          "action": "AUTO_APPROVE",
+          "reason": "Invoice amount within +/- 1% tolerance of PO amount",
+          "route_to": null,
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-QR-001",
+          "source_clause": "Section 7.1",
+          "action": "HOLD",
+          "reason": "Invoice above INR 10L missing mandatory QR code per GST e-invoicing norms",
+          "route_to": "AP_CLERK",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-QR-003",
+          "source_clause": "Section 7.3",
+          "action": "FLAG_WARNING",
+          "reason": "Digital signature is present but invalid \u2014 manual review required",
+          "route_to": "AP_CLERK",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-APR-004",
+          "source_clause": "Section 5.4",
+          "action": "ROUTE_FOR_APPROVAL",
+          "reason": "Invoice amount above INR 50L requires CFO approval",
+          "route_to": "CFO",
+          "requires_justification": false,
+          "scope": "INVOICE",
+          "line_item_id": null
+        },
+        {
+          "rule_id": "AP-PO-006",
+          "source_clause": "Section 2.3(b)",
+          "action": "HOLD",
+          "reason": "Invoice quantity exceeds PO quantity for one or more line items",
+          "route_to": "PROCUREMENT",
+          "requires_justification": false,
+          "scope": "LINE_ITEM",
+          "line_item_id": 1
+        }
+      ],
+      "errors": [],
+      "derived_fields": {
+        "amount_deviation_pct": 0.5,
+        "abs_amount_deviation_pct": 0.5,
+        "abs_tax_calculation_error": 0,
+        "gstin_embedded_pan": "MEGAI1234M",
+        "buyer_gstin_state_code": "06",
+        "has_compliance_failure": false,
+        "has_three_way_match_deviation": true,
+        "has_unresolved_deviation": false,
+        "deviation_age_hours": 0,
+        "notification_sent": false,
+        "existing_invoice_number": null,
+        "existing_invoice_vendor_gstin": null,
+        "all_validations_passed": false
+      },
+      "notifications_dispatched": 1
+    }
+  ]
+}

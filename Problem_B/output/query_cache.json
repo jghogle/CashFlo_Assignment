@@ -1,0 +1,378 @@
+[
+  {
+    "question": "Top vendors by on-time payment rate",
+    "sql": "SELECT \n      v.name AS vendor_name,\n      ROUND(100.0 * SUM(CASE WHEN p.payment_date <= i.due_date THEN 1 ELSE 0 END) / COUNT(p.id), 2) AS on_time_payment_rate\n    FROM invoices i\n    JOIN payments p ON p.invoice_id = i.id  \n    JOIN vendors v ON i.vendor_id = v.id\n    GROUP BY v.id\n    ORDER BY on_time_payment_rate DESC\n    LIMIT 100;",
+    "result_preview": [
+      [
+        "BrightStar IT Services",
+        100.0
+      ],
+      [
+        "CloudNet Infra",
+        100.0
+      ],
+      [
+        "PrimePack Industries",
+        66.67
+      ],
+      [
+        "PrintMax Stationery",
+        66.67
+      ],
+      [
+        "TechServe Solutions Pvt Ltd",
+        66.67
+      ]
+    ],
+    "explanation": "This query calculates the on-time payment rate for each vendor by joining the invoices, payments, and vendors tables. It counts the number of payments made on or before the invoice due date, divides that by the total number of payments for each vendor, and orders the results by the on-time payment rate in descending order to get the top vendors.",
+    "assumptions": "None",
+    "created_at": "2026-03-05T02:36:33",
+    "updated_at": "2026-03-05T02:36:33",
+    "hit_count": 0,
+    "columns": [
+      "vendor_name",
+      "on_time_payment_rate"
+    ],
+    "rows": [
+      [
+        "BrightStar IT Services",
+        100.0
+      ],
+      [
+        "CloudNet Infra",
+        100.0
+      ],
+      [
+        "PrimePack Industries",
+        66.67
+      ],
+      [
+        "PrintMax Stationery",
+        66.67
+      ],
+      [
+        "TechServe Solutions Pvt Ltd",
+        66.67
+      ],
+      [
+        "MegaTrade Exports",
+        50.0
+      ],
+      [
+        "NovaChem Supplies",
+        50.0
+      ],
+      [
+        "DataPipe Analytics LLP",
+        50.0
+      ],
+      [
+        "AlphaConsult Partners",
+        42.86
+      ],
+      [
+        "OmniTech Hardware",
+        33.33
+      ],
+      [
+        "RapidBuild Construction",
+        25.0
+      ],
+      [
+        "SafeGuard Security Services",
+        0.0
+      ],
+      [
+        "Zenith Office Supplies",
+        0.0
+      ],
+      [
+        "GreenLogistics Transport",
+        0.0
+      ]
+    ],
+    "row_count": 14,
+    "viz_type": "table",
+    "viz_config": {},
+    "is_ambiguous": true,
+    "clarification_question": "What metric should I use to rank vendors?",
+    "clarification_options": [
+      "Top vendors by total invoice value",
+      "Top vendors by invoice count",
+      "Top vendors by vendor rating (A\u2013D)",
+      "Top vendors by on-time payment rate"
+    ]
+  },
+  {
+    "question": "Top vendors by total invoice value",
+    "sql": "SELECT \n    v.name AS vendor_name,\n    ROUND(SUM(i.grand_total), 2) AS total_invoice_value\n  FROM invoices i\n  JOIN vendors v ON i.vendor_id = v.id\n  GROUP BY v.id\n  ORDER BY total_invoice_value DESC\n  LIMIT 100;",
+    "result_preview": [
+      [
+        "AlphaConsult Partners",
+        35702708.36
+      ],
+      [
+        "RapidBuild Construction",
+        33756478.36
+      ],
+      [
+        "DataPipe Analytics LLP",
+        24020168.13
+      ],
+      [
+        "NovaChem Supplies",
+        23052665.11
+      ],
+      [
+        "SafeGuard Security Services",
+        17674307.11
+      ]
+    ],
+    "explanation": "This query calculates the total invoice value for each vendor by joining the invoices and vendors tables, grouping by vendor, summing the grand_total column from the invoices table, and ordering the results by the total_invoice_value in descending order to get the top vendors by total invoice value.",
+    "assumptions": "None",
+    "created_at": "2026-03-05T02:36:36",
+    "updated_at": "2026-03-05T02:36:36",
+    "hit_count": 0,
+    "columns": [
+      "vendor_name",
+      "total_invoice_value"
+    ],
+    "rows": [
+      [
+        "AlphaConsult Partners",
+        35702708.36
+      ],
+      [
+        "RapidBuild Construction",
+        33756478.36
+      ],
+      [
+        "DataPipe Analytics LLP",
+        24020168.13
+      ],
+      [
+        "NovaChem Supplies",
+        23052665.11
+      ],
+      [
+        "SafeGuard Security Services",
+        17674307.11
+      ],
+      [
+        "PrintMax Stationery",
+        16916259.73
+      ],
+      [
+        "OmniTech Hardware",
+        16721752.68
+      ],
+      [
+        "PrimePack Industries",
+        13645508.52
+      ],
+      [
+        "TechServe Solutions Pvt Ltd",
+        13598768.25
+      ],
+      [
+        "GreenLogistics Transport",
+        8514071.57
+      ],
+      [
+        "BrightStar IT Services",
+        7991659.57
+      ],
+      [
+        "Zenith Office Supplies",
+        6510901.62
+      ],
+      [
+        "Aegis Facility Management",
+        6009316.13
+      ],
+      [
+        "CloudNet Infra",
+        3973623.15
+      ],
+      [
+        "MegaTrade Exports",
+        2504127.49
+      ]
+    ],
+    "row_count": 15,
+    "viz_type": "bar",
+    "viz_config": {
+      "x": "vendor_name",
+      "y": "total_invoice_value"
+    },
+    "is_ambiguous": true,
+    "clarification_question": "What metric should I use to rank vendors?",
+    "clarification_options": [
+      "Top vendors by total invoice value",
+      "Top vendors by invoice count",
+      "Top vendors by vendor rating (A\u2013D)",
+      "Top vendors by on-time payment rate"
+    ]
+  },
+  {
+    "question": "Who are our top 5 vendors?",
+    "sql": "SELECT \n    v.name AS vendor_name, \n    ROUND(SUM(i.grand_total), 2) AS total_invoiced\n  FROM invoices i\n  JOIN vendors v ON i.vendor_id = v.id\n  WHERE i.status = 'paid'\n  GROUP BY v.id\n  ORDER BY total_invoiced DESC\n  LIMIT 5;",
+    "result_preview": [
+      [
+        "AlphaConsult Partners",
+        18309145.92
+      ],
+      [
+        "DataPipe Analytics LLP",
+        13671902.06
+      ],
+      [
+        "PrimePack Industries",
+        12021668.78
+      ],
+      [
+        "OmniTech Hardware",
+        8806471.6
+      ],
+      [
+        "NovaChem Supplies",
+        7381760.17
+      ]
+    ],
+    "explanation": "This query finds the top 5 vendors by total invoiced amount. It joins the invoices and vendors tables to get the vendor name and total invoiced amount for each vendor. It filters for only paid invoices, groups the results by vendor, orders by the total invoiced amount descending, and limits to the top 5 results.",
+    "assumptions": "None",
+    "created_at": "2026-03-05T12:59:28",
+    "updated_at": "2026-03-05T12:59:28",
+    "hit_count": 0,
+    "columns": [
+      "vendor_name",
+      "total_invoiced"
+    ],
+    "rows": [
+      [
+        "AlphaConsult Partners",
+        18309145.92
+      ],
+      [
+        "DataPipe Analytics LLP",
+        13671902.06
+      ],
+      [
+        "PrimePack Industries",
+        12021668.78
+      ],
+      [
+        "OmniTech Hardware",
+        8806471.6
+      ],
+      [
+        "NovaChem Supplies",
+        7381760.17
+      ]
+    ],
+    "row_count": 5,
+    "viz_type": "bar",
+    "viz_config": {
+      "x": "vendor_name",
+      "y": "total_invoiced"
+    },
+    "is_ambiguous": true,
+    "clarification_question": "What metric should I use to rank vendors?",
+    "clarification_options": [
+      "Top vendors by total invoice value",
+      "Top vendors by invoice count",
+      "Top vendors by vendor rating (A\u2013D)",
+      "Top vendors by on-time payment rate"
+    ]
+  },
+  {
+    "question": "Top vendors by vendor rating (A\u2013D)",
+    "sql": "SELECT \n    v.name AS vendor_name,\n    v.rating,\n    CASE WHEN v.rating = 'A' THEN 1 \n         WHEN v.rating = 'B' THEN 2\n         WHEN v.rating = 'C' THEN 3\n         WHEN v.rating = 'D' THEN 4\n    END AS rating_order,\n    ROUND(SUM(i.grand_total), 2) AS total_invoiced\n  FROM invoices i\n  JOIN vendors v ON i.vendor_id = v.id  \n  WHERE i.status = 'paid'\n  GROUP BY v.id\n  ORDER BY rating_order ASC, total_invoiced DESC\n  LIMIT 5;",
+    "result_preview": [
+      [
+        "NovaChem Supplies",
+        "A",
+        1,
+        7381760.17
+      ],
+      [
+        "SafeGuard Security Services",
+        "A",
+        1,
+        4469443.44
+      ],
+      [
+        "TechServe Solutions Pvt Ltd",
+        "A",
+        1,
+        3235111.75
+      ],
+      [
+        "PrintMax Stationery",
+        "A",
+        1,
+        2637799.0
+      ],
+      [
+        "BrightStar IT Services",
+        "A",
+        1,
+        1153491.76
+      ]
+    ],
+    "explanation": "This query finds the top 5 vendors by their rating (A-D), where A is the best rating. It joins the invoices and vendors tables to get the vendor name, rating, and total invoiced amount for each vendor. It filters for only paid invoices, groups the results by vendor, orders first by the custom rating_order column (which sorts A-D) and then by the total invoiced amount descending, and limits to the top 5 results.",
+    "assumptions": "None",
+    "created_at": "2026-03-05T12:59:35",
+    "updated_at": "2026-03-05T12:59:35",
+    "hit_count": 0,
+    "columns": [
+      "vendor_name",
+      "rating",
+      "rating_order",
+      "total_invoiced"
+    ],
+    "rows": [
+      [
+        "NovaChem Supplies",
+        "A",
+        1,
+        7381760.17
+      ],
+      [
+        "SafeGuard Security Services",
+        "A",
+        1,
+        4469443.44
+      ],
+      [
+        "TechServe Solutions Pvt Ltd",
+        "A",
+        1,
+        3235111.75
+      ],
+      [
+        "PrintMax Stationery",
+        "A",
+        1,
+        2637799.0
+      ],
+      [
+        "BrightStar IT Services",
+        "A",
+        1,
+        1153491.76
+      ]
+    ],
+    "row_count": 5,
+    "viz_type": "table",
+    "viz_config": {},
+    "is_ambiguous": true,
+    "clarification_question": "What metric should I use to rank vendors?",
+    "clarification_options": [
+      "Top vendors by total invoice value",
+      "Top vendors by invoice count",
+      "Top vendors by vendor rating (A\u2013D)",
+      "Top vendors by on-time payment rate"
+    ]
+  }
+]

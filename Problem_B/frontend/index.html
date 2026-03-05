@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cashflo — NLP to SQL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --cf-navy:  #1B307A;
+      --cf-blue:  #3553C8;
+      --cf-coral: #E86A5C;
+      --cf-navy-light: #e8ecf8;
+      --cf-blue-light: #eef1fb;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; }
+    .sidebar { background: var(--cf-navy); }
+    .sidebar-link { display:flex; align-items:center; gap:10px; padding:10px 16px; border-radius:8px; color:rgba(255,255,255,0.7); font-size:14px; cursor:pointer; width:100%; text-align:left; transition:all .15s; }
+    .sidebar-link.active, .sidebar-link:hover { background:rgba(255,255,255,0.12); color:#fff; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 1px 4px rgba(0,0,0,.07); padding:20px; }
+    .btn-primary { background:var(--cf-blue); color:#fff; border-radius:8px; padding:8px 18px; font-size:14px; font-weight:600; cursor:pointer; transition:.15s; display:inline-flex; align-items:center; gap:6px; }
+    .btn-primary:hover { background:var(--cf-navy); }
+    .btn-ghost { border:1px solid #e2e8f0; background:#fff; color:#64748b; border-radius:8px; padding:7px 14px; font-size:13px; cursor:pointer; transition:.15s; }
+    .btn-ghost:hover { background:#f8fafc; }
+    .badge { font-size:11px; font-weight:600; padding:2px 8px; border-radius:20px; }
+    .badge-blue  { background:var(--cf-blue-light); color:var(--cf-blue); }
+    .badge-coral { background:#fef2f0; color:var(--cf-coral); }
+    .badge-green { background:#f0fdf4; color:#16a34a; }
+    .badge-gray  { background:#f1f5f9; color:#64748b; }
+    .chat-bubble-user { background:var(--cf-blue); color:#fff; border-radius:18px 18px 4px 18px; padding:10px 16px; max-width:75%; margin-left:auto; font-size:14px; }
+    .chat-bubble-bot  { background:#fff; border:1px solid #e2e8f0; border-radius:18px 18px 18px 4px; padding:14px 18px; max-width:90%; font-size:14px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+    .sql-block { background:#0f172a; color:#e2e8f0; border-radius:8px; padding:14px; font-family:monospace; font-size:12px; white-space:pre-wrap; word-break:break-all; }
+    .result-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .result-table th { background:var(--cf-navy-light); color:var(--cf-navy); padding:8px 12px; text-align:left; font-weight:600; border-bottom:1px solid #dde3f4; }
+    .result-table td { padding:7px 12px; border-bottom:1px solid #f1f5f9; color:#334155; }
+    .result-table tr:hover td { background:#f8fafc; }
+    .thinking { display:flex; gap:5px; align-items:center; padding:12px 16px; }
+    .dot { width:8px; height:8px; border-radius:50%; background:var(--cf-blue); animation: bounce 1.2s infinite; }
+    .dot:nth-child(2) { animation-delay:.2s; }
+    .dot:nth-child(3) { animation-delay:.4s; }
+    @keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-8px)} }
+    .schema-table { font-size:12px; }
+    .schema-table td, .schema-table th { padding:4px 8px; border:1px solid #e2e8f0; }
+    .schema-table th { background:#f8fafc; font-weight:600; }
+    input[type=text], textarea { outline:none; }
+    input[type=text]:focus, textarea:focus { ring:2px; ring-color:var(--cf-blue); }
+    ::-webkit-scrollbar { width:5px; height:5px; }
+    ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:8px; }
+  </style>
+</head>
+<body x-data="app()" x-init="init()">
+<div class="flex h-screen overflow-hidden">
+
+  <!-- Sidebar -->
+  <aside class="sidebar w-56 flex-shrink-0 flex flex-col p-4 gap-1">
+    <div class="flex items-center gap-2 mb-6 mt-1 px-2">
+      <div class="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style="background:#2563EB">
+        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M10 11h4"/></svg>
+      </div>
+      <span class="text-white font-bold text-sm leading-tight">NLP to SQL</span>
+    </div>
+    <button @click="tab='chat'"   :class="tab==='chat'   ? 'active':''" class="sidebar-link"><span>💬</span> Ask a Question</button>
+    <button @click="tab='schema'" :class="tab==='schema' ? 'active':''" class="sidebar-link"><span>🗄️</span> Schema Explorer</button>
+    <button @click="tab='semantic'" :class="tab==='semantic'?'active':''" class="sidebar-link"><span>📖</span> Semantic Layer</button>
+    <button @click="tab='cache'"  :class="tab==='cache'  ? 'active':''" class="sidebar-link"><span>⚡</span> Query Cache</button>
+    <div class="flex-1"></div>
+    <div class="px-2 py-3 border-t border-white/10">
+      <p class="text-xs text-white/40">Problem B · Cashflo AI</p>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="flex-1 flex flex-col overflow-hidden">
+
+    <!-- ── CHAT TAB ─────────────────────────────────────────────────────── -->
+    <div x-show="tab==='chat'" class="flex flex-col h-full">
+
+      <!-- Header -->
+      <div class="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between flex-shrink-0">
+        <div>
+          <h1 class="font-bold text-slate-800">Ask in Plain English</h1>
+          <p class="text-xs text-slate-400 mt-0.5">Powered by Claude · <span x-text="sessionId ? 'Session: '+sessionId.slice(0,8)+'…' : 'No session'"></span></p>
+        </div>
+        <div class="flex gap-2">
+          <button @click="newSession()" class="btn-ghost text-xs">New Session</button>
+          <button @click="tab='schema'" class="btn-ghost text-xs">Schema →</button>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4" id="chatBox">
+
+        <!-- Welcome -->
+        <template x-if="messages.length === 0">
+          <div class="max-w-2xl mx-auto mt-6">
+            <div class="card text-center mb-6">
+              <p class="text-2xl mb-2">🤖</p>
+              <h2 class="font-bold text-slate-800 text-lg">Ask anything about your AP data</h2>
+              <p class="text-slate-500 text-sm mt-1">Queries are automatically converted to SQL and executed against the live database.</p>
+            </div>
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Sample questions</p>
+            <div class="grid grid-cols-2 gap-2">
+              <template x-for="q in sampleQuestions" :key="q">
+                <button @click="sendQuestion(q)"
+                  class="text-left text-sm bg-white border border-slate-200 rounded-lg px-3 py-2 hover:border-blue-300 hover:bg-blue-50 transition-all text-slate-600">
+                  <span x-text="q"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+        </template>
+
+        <!-- Chat messages -->
+        <template x-for="msg in messages" :key="msg.id">
+          <div>
+            <!-- User bubble -->
+            <template x-if="msg.role==='user'">
+              <div class="flex justify-end mb-1">
+                <div class="chat-bubble-user" x-text="msg.content"></div>
+              </div>
+            </template>
+
+            <!-- Bot bubble -->
+            <template x-if="msg.role==='assistant'">
+              <div class="flex justify-start mb-2">
+                <div class="chat-bubble-bot w-full max-w-4xl">
+
+                  <!-- Thinking -->
+                  <template x-if="msg.loading">
+                    <div class="thinking"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+                  </template>
+
+                  <template x-if="!msg.loading">
+                    <div class="space-y-3">
+
+                      <!-- Error -->
+                      <template x-if="msg.error">
+                        <div class="flex items-start gap-2 text-red-600 text-sm">
+                          <span>⚠️</span><span x-text="msg.error"></span>
+                        </div>
+                      </template>
+
+                      <template x-if="!msg.error">
+                        <div class="space-y-3">
+
+                          <!-- Cache hit badge -->
+                          <template x-if="msg.cache_hit">
+                            <div class="flex items-center gap-1.5">
+                              <span class="badge badge-green">⚡ Cache hit</span>
+                              <span class="text-xs text-slate-400" x-text="'Similarity: '+(msg.cache_similarity*100).toFixed(0)+'%'"></span>
+                            </div>
+                          </template>
+
+                          <!-- Ambiguous warning with clarification options -->
+                          <template x-if="msg.is_ambiguous">
+                            <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 text-sm space-y-3">
+                              <div class="flex items-start gap-2 text-amber-800">
+                                <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                                <span class="font-semibold" x-text="msg.clarification_question"></span>
+                              </div>
+                              <template x-if="msg.clarification_options && msg.clarification_options.length > 0">
+                                <div class="flex flex-wrap gap-2">
+                                  <template x-for="opt in msg.clarification_options" :key="opt">
+                                    <button
+                                      @click="sendQuestion(opt)"
+                                      class="px-3 py-1.5 bg-white border border-amber-400 text-amber-800 rounded-lg text-xs font-medium hover:bg-amber-100 transition"
+                                      x-text="opt">
+                                    </button>
+                                  </template>
+                                </div>
+                              </template>
+                              <p class="text-xs text-amber-600 italic">Showing default result below — click an option above to refine.</p>
+                            </div>
+                          </template>
+
+                          <!-- Explanation -->
+                          <p class="text-slate-700 text-sm leading-relaxed" x-text="msg.explanation"></p>
+
+                          <!-- Assumptions -->
+                          <template x-if="msg.assumptions">
+                            <p class="text-xs text-slate-400 italic">Assumption: <span x-text="msg.assumptions"></span></p>
+                          </template>
+
+                          <!-- SQL toggle -->
+                          <div>
+                            <button @click="msg.showSql = !msg.showSql"
+                              class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                              <span x-text="msg.showSql ? '▼ Hide SQL' : '▶ Show SQL'"></span>
+                            </button>
+                            <template x-if="msg.showSql">
+                              <div class="sql-block mt-2" x-text="msg.sql"></div>
+                            </template>
+                          </div>
+
+                          <!-- Scalar result -->
+                          <template x-if="msg.viz_type === 'scalar'">
+                            <div class="bg-blue-50 rounded-xl p-5 text-center">
+                              <p class="text-3xl font-bold text-blue-700" x-text="formatNumber(msg.rows[0][0])"></p>
+                              <p class="text-sm text-slate-500 mt-1" x-text="msg.columns[0]"></p>
+                            </div>
+                          </template>
+
+                          <!-- Table result -->
+                          <template x-if="msg.viz_type !== 'scalar' && msg.rows && msg.rows.length > 0">
+                            <div>
+                              <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-slate-400" x-text="msg.rows.length + ' row(s)'"></span>
+                                <div class="flex gap-1">
+                                  <template x-if="['bar','line','pie'].includes(msg.viz_type)">
+                                    <button @click="msg.view = msg.view==='chart'?'table':'chart'"
+                                      class="text-xs badge badge-blue cursor-pointer">
+                                      <span x-text="msg.view==='chart'?'📋 Table':'📊 Chart'"></span>
+                                    </button>
+                                  </template>
+                                </div>
+                              </div>
+
+                              <!-- Chart view -->
+                              <template x-if="msg.view==='chart' && ['bar','line','pie'].includes(msg.viz_type)">
+                                <div class="bg-white rounded-lg border border-slate-100 p-3" style="height:260px">
+                                  <canvas :id="'chart-'+msg.id"></canvas>
+                                </div>
+                              </template>
+
+                              <!-- Table view -->
+                              <template x-if="msg.view !== 'chart'">
+                                <div class="overflow-x-auto rounded-lg border border-slate-100">
+                                  <table class="result-table">
+                                    <thead>
+                                      <tr>
+                                        <template x-for="col in msg.columns" :key="col">
+                                          <th x-text="col"></th>
+                                        </template>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <template x-for="row in msg.rows.slice(0,50)" :key="JSON.stringify(row)">
+                                        <tr>
+                                          <template x-for="(cell, ci) in row" :key="ci">
+                                            <td x-text="cell ?? '—'"></td>
+                                          </template>
+                                        </tr>
+                                      </template>
+                                    </tbody>
+                                  </table>
+                                  <template x-if="msg.rows.length > 50">
+                                    <p class="text-xs text-slate-400 text-center py-2">Showing 50 of <span x-text="msg.rows.length"></span> rows</p>
+                                  </template>
+                                </div>
+                              </template>
+                            </div>
+                          </template>
+
+                          <!-- No rows -->
+                          <template x-if="msg.rows && msg.rows.length === 0 && !msg.error">
+                            <p class="text-sm text-slate-400 italic">No results found.</p>
+                          </template>
+
+                          <!-- Viz suggestion -->
+                          <template x-if="msg.viz_type && msg.viz_type !== 'none' && msg.viz_type !== 'scalar'">
+                            <p class="text-xs text-slate-400">
+                              💡 Suggested visualization: <strong x-text="msg.viz_type.toUpperCase()"></strong>
+                              <span x-show="msg.view !== 'chart' && ['bar','line','pie'].includes(msg.viz_type)">
+                                — <button @click="msg.view='chart'; $nextTick(()=>drawChart(msg))" class="text-blue-500 underline">render it</button>
+                              </span>
+                            </p>
+                          </template>
+
+                        </div>
+                      </template>
+
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+
+      <!-- Input bar -->
+      <div class="bg-white border-t border-slate-200 px-6 py-4 flex-shrink-0">
+        <div class="flex gap-3 max-w-4xl mx-auto">
+          <input x-model="inputText" type="text"
+            @keydown.enter.prevent="sendQuestion(inputText)"
+            placeholder="Ask anything… e.g. 'Which vendors have overdue invoices?'"
+            class="flex-1 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-blue-400 transition-colors" />
+          <button @click="sendQuestion(inputText)" :disabled="loading || !inputText.trim()"
+            class="btn-primary" :class="{'opacity-50 cursor-not-allowed': loading || !inputText.trim()}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            Ask
+          </button>
+        </div>
+        <p class="text-xs text-center text-slate-400 mt-2">
+          Multi-turn: follow-up questions remember your conversation context within a session.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── SCHEMA TAB ────────────────────────────────────────────────────── -->
+    <div x-show="tab==='schema'" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <h1 class="text-xl font-bold text-slate-800">Schema Explorer</h1>
+      <p class="text-sm text-slate-500">Auto-discovered from <code>cashflo_sample.db</code></p>
+
+      <template x-if="!schema">
+        <div class="card text-center text-slate-400 py-10">Loading schema…</div>
+      </template>
+
+      <template x-if="schema">
+        <div class="grid gap-4">
+          <template x-for="(tinfo, tname) in schema.schema.tables" :key="tname">
+            <div class="card">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-slate-800" x-text="tname"></span>
+                  <span class="badge badge-gray" x-text="tinfo.row_count + ' rows'"></span>
+                </div>
+                <button @click="tinfo._open = !tinfo._open" class="text-xs text-blue-500">
+                  <span x-text="tinfo._open ? 'Collapse ▲' : 'Expand ▼'"></span>
+                </button>
+              </div>
+              <template x-if="tinfo._open">
+                <div class="overflow-x-auto">
+                  <table class="schema-table w-full">
+                    <thead><tr><th>Column</th><th>Type</th><th>PK</th><th>Sample Values</th></tr></thead>
+                    <tbody>
+                      <template x-for="(cinfo, cname) in tinfo.columns" :key="cname">
+                        <tr>
+                          <td class="font-mono text-blue-700" x-text="cname"></td>
+                          <td class="text-slate-500" x-text="cinfo.type"></td>
+                          <td class="text-center" x-text="cinfo.pk ? '🔑' : ''"></td>
+                          <td class="text-slate-400 text-xs" x-text="(tinfo.sample_values[cname] || []).slice(0,4).join(', ')"></td>
+                        </tr>
+                      </template>
+                    </tbody>
+                  </table>
+                </div>
+              </template>
+            </div>
+          </template>
+        </div>
+      </template>
+    </div>
+
+    <!-- ── SEMANTIC LAYER TAB ────────────────────────────────────────────── -->
+    <div x-show="tab==='semantic'" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <h1 class="text-xl font-bold text-slate-800">Semantic Layer</h1>
+      <p class="text-sm text-slate-500">Business-friendly definitions powering the NLP engine</p>
+
+      <template x-if="!semLayer">
+        <div class="card text-center text-slate-400 py-10">Loading…</div>
+      </template>
+
+      <template x-if="semLayer">
+        <div class="space-y-4">
+
+          <!-- Metrics -->
+          <div class="card">
+            <h2 class="font-semibold text-slate-700 mb-3">📊 Business Metrics</h2>
+            <div class="grid gap-3">
+              <template x-for="(m, name) in semLayer.metrics" :key="name">
+                <div class="border border-slate-100 rounded-lg p-3">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-mono font-bold text-blue-700" x-text="name"></span>
+                  </div>
+                  <p class="text-sm text-slate-600" x-text="m.description"></p>
+                  <div class="sql-block text-xs mt-2" x-text="m.sql"></div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Synonyms -->
+          <div class="card">
+            <h2 class="font-semibold text-slate-700 mb-3">🔤 Synonyms</h2>
+            <div class="flex flex-wrap gap-2">
+              <template x-for="(target, word) in semLayer.synonyms" :key="word">
+                <span class="text-xs bg-slate-100 rounded px-2 py-1">
+                  <span class="font-semibold text-slate-700" x-text="word"></span>
+                  <span class="text-slate-400"> → </span>
+                  <span class="text-blue-600 font-mono" x-text="typeof target === 'string' ? target : JSON.stringify(target)"></span>
+                </span>
+              </template>
+            </div>
+          </div>
+
+          <!-- Relationships -->
+          <div class="card">
+            <h2 class="font-semibold text-slate-700 mb-3">🔗 Table Relationships</h2>
+            <div class="space-y-1">
+              <template x-for="(rel, i) in semLayer.relationships" :key="i">
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="font-mono text-slate-700" x-text="rel.from"></span>
+                  <span class="text-slate-400">→</span>
+                  <span class="font-mono text-blue-600" x-text="rel.to"></span>
+                  <span class="text-slate-400 text-xs" x-text="'ON ' + rel.join"></span>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Tables -->
+          <div class="card">
+            <h2 class="font-semibold text-slate-700 mb-3">🗂️ Table Descriptions</h2>
+            <div class="space-y-3">
+              <template x-for="(tinfo, tname) in semLayer.tables" :key="tname">
+                <div class="border-l-4 pl-3" style="border-color:var(--cf-blue)">
+                  <p class="font-mono font-bold text-slate-800 text-sm" x-text="tname"></p>
+                  <p class="text-sm text-slate-500" x-text="tinfo.description"></p>
+                  <p class="text-xs text-slate-400 mt-0.5" x-text="'Synonyms: ' + (tinfo.synonyms || []).join(', ')"></p>
+                </div>
+              </template>
+            </div>
+          </div>
+
+        </div>
+      </template>
+    </div>
+
+    <!-- ── CACHE TAB ─────────────────────────────────────────────────────── -->
+    <div x-show="tab==='cache'" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-xl font-bold text-slate-800">Query Cache</h1>
+          <p class="text-sm text-slate-500 mt-0.5">Previously asked questions and their cached SQL</p>
+        </div>
+        <div class="flex gap-2">
+          <a href="/api/download/cache" download="query_cache.json" class="btn-ghost text-xs">⬇ Download</a>
+          <button @click="clearCache()" class="btn-ghost text-xs text-red-500">🗑 Clear</button>
+        </div>
+      </div>
+
+      <template x-if="cacheEntries.length === 0">
+        <div class="card text-center text-slate-400 py-12">
+          <p class="text-2xl mb-2">⚡</p>
+          <p>No cached queries yet. Ask a question to populate the cache.</p>
+        </div>
+      </template>
+
+      <template x-for="entry in cacheEntries" :key="entry.question">
+        <div class="card space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <p class="font-medium text-slate-800 text-sm" x-text="entry.question"></p>
+            <span class="badge badge-gray flex-shrink-0" x-text="(entry.hit_count||0)+' hits'"></span>
+          </div>
+          <p class="text-xs text-slate-500" x-text="entry.explanation"></p>
+          <div class="sql-block text-xs" x-text="entry.sql"></div>
+          <div class="flex items-center justify-between">
+            <p class="text-xs text-slate-400" x-text="'Cached ' + (entry.created_at||'').slice(0,10)"></p>
+            <button @click="sendQuestion(entry.question); tab='chat'" class="text-xs text-blue-500 hover:underline">Re-run →</button>
+          </div>
+        </div>
+      </template>
+    </div>
+
+  </main>
+</div>
+
+<script>
+function app() {
+  return {
+    tab: 'chat',
+    messages: [],
+    inputText: '',
+    loading: false,
+    sessionId: null,
+    sampleQuestions: [],
+    schema: null,
+    semLayer: null,
+    cacheEntries: [],
+    chartInstances: {},
+
+    async init() {
+      this.sessionId = crypto.randomUUID();
+      await this.loadSampleQuestions();
+      await this.loadSchema();
+      await this.loadSemLayer();
+      await this.loadCache();
+    },
+
+    async loadSampleQuestions() {
+      try {
+        const r = await fetch('/api/sample-questions');
+        const d = await r.json();
+        this.sampleQuestions = d.questions || [];
+      } catch {}
+    },
+
+    async loadSchema() {
+      try {
+        const r = await fetch('/api/schema');
+        this.schema = await r.json();
+        // Open first table by default
+        for (const tname of Object.keys(this.schema.schema.tables).slice(0,1)) {
+          this.schema.schema.tables[tname]._open = true;
+        }
+      } catch {}
+    },
+
+    async loadSemLayer() {
+      try {
+        const r = await fetch('/api/semantic-layer');
+        this.semLayer = await r.json();
+      } catch {}
+    },
+
+    async loadCache() {
+      try {
+        const r = await fetch('/api/cache');
+        const d = await r.json();
+        this.cacheEntries = d.entries || [];
+      } catch {}
+    },
+
+    async clearCache() {
+      if (!confirm('Clear all cached queries?')) return;
+      await fetch('/api/cache', { method: 'DELETE' });
+      this.cacheEntries = [];
+    },
+
+    async sendQuestion(question) {
+      question = (question || '').trim();
+      if (!question || this.loading) return;
+      this.inputText = '';
+      this.loading = true;
+      this.tab = 'chat';
+
+      const msgId = Date.now();
+      this.messages.push({ id: msgId, role: 'user', content: question });
+      const botId = msgId + 1;
+      this.messages.push({ id: botId, role: 'assistant', loading: true });
+
+      await this.$nextTick();
+      document.getElementById('chatBox')?.lastElementChild?.scrollIntoView({ behavior: 'smooth' });
+
+      try {
+        const r = await fetch('/api/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question, session_id: this.sessionId, use_cache: true }),
+        });
+        const d = await r.json();
+
+        const bot = this.messages.find(m => m.id === botId);
+        if (bot) {
+          Object.assign(bot, {
+            loading: false,
+            sql: d.sql || '',
+            explanation: d.explanation || '',
+            assumptions: d.assumptions || '',
+            is_ambiguous: d.is_ambiguous,
+            clarification_question: d.clarification_question || '',
+            clarification_options: d.clarification_options || [],
+            columns: d.columns || [],
+            rows: d.rows || [],
+            row_count: d.row_count || 0,
+            viz_type: d.viz_type || 'none',
+            viz_config: d.viz_config || {},
+            error: d.error || '',
+            cache_hit: d.cache_hit || false,
+            cache_similarity: d.cache_similarity || 0,
+            showSql: false,
+            view: (['bar','line','pie'].includes(d.viz_type)) ? 'table' : 'table',
+          });
+        }
+
+        this.sessionId = d.session_id || this.sessionId;
+        await this.loadCache();
+
+      } catch (e) {
+        const bot = this.messages.find(m => m.id === botId);
+        if (bot) Object.assign(bot, { loading: false, error: 'Request failed: ' + e.message });
+      }
+
+      this.loading = false;
+      await this.$nextTick();
+      document.getElementById('chatBox')?.lastElementChild?.scrollIntoView({ behavior: 'smooth' });
+    },
+
+    drawChart(msg) {
+      const canvas = document.getElementById('chart-' + msg.id);
+      if (!canvas) return;
+      if (this.chartInstances[msg.id]) {
+        this.chartInstances[msg.id].destroy();
+      }
+      const labels = msg.rows.map(r => r[0]);
+      const data   = msg.rows.map(r => parseFloat(r[1]) || 0);
+      const colors = ['#3553C8','#E86A5C','#1B307A','#6366f1','#f59e0b','#10b981','#ec4899','#14b8a6','#f97316','#8b5cf6'];
+      const cfg = {
+        bar:  { type:'bar',  data:{ labels, datasets:[{ label: msg.columns[1]||'Value', data, backgroundColor: colors.slice(0,data.length), borderRadius:4 }] }, options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}} } },
+        line: { type:'line', data:{ labels, datasets:[{ label: msg.columns[1]||'Value', data, borderColor:'#3553C8', backgroundColor:'rgba(53,83,200,0.1)', fill:true, tension:0.4, pointRadius:4 }] }, options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}} } },
+        pie:  { type:'pie',  data:{ labels, datasets:[{ data, backgroundColor: colors.slice(0,data.length) }] }, options: { responsive:true, maintainAspectRatio:false } },
+      }[msg.viz_type];
+      if (cfg) this.chartInstances[msg.id] = new Chart(canvas, cfg);
+    },
+
+    newSession() {
+      this.sessionId = crypto.randomUUID();
+      this.messages = [];
+    },
+
+    formatNumber(val) {
+      if (val === null || val === undefined) return '—';
+      const n = parseFloat(val);
+      if (isNaN(n)) return val;
+      return n.toLocaleString('en-IN', { maximumFractionDigits: 2 });
+    },
+  };
+}
+</script>
+</body>
+</html>

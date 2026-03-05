@@ -1,0 +1,1104 @@
+[
+  {
+    "timestamp": "2026-03-04T23:41:30.628440",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.629864",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.631348",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.632923",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.634451",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.636820",
+    "triggered_by": "AP-PO-003",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Routed for Approval \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.638002",
+    "triggered_by": "AP-TAX-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.639259",
+    "triggered_by": "AP-TAX-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Compliance Hold \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.640517",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.642768",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.643925",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.645124",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "procurement@company.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.646439",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:41:30.648596",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-004",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-004 | Vendor: Mega Infrastructure Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-004\nVendor Name      : Mega Infrastructure Ltd\nPO Number        : PO-2026-004\nInvoice Amount   : INR 60,300,000"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.066895",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.068286",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.069552",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.070729",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.071918",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.075520",
+    "triggered_by": "AP-PO-003",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Routed for Approval \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.076936",
+    "triggered_by": "AP-TAX-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.078337",
+    "triggered_by": "AP-TAX-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Compliance Hold \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.079721",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.081072",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.082391",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.083878",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "procurement@company.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.085172",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:42:18.087281",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-004",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-004 | Vendor: Mega Infrastructure Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-004\nVendor Name      : Mega Infrastructure Ltd\nPO Number        : PO-2026-004\nInvoice Amount   : INR 60,300,000"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.220953",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.222537",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.223984",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.225416",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.227761",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.231049",
+    "triggered_by": "AP-PO-003",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Routed for Approval \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.232456",
+    "triggered_by": "AP-TAX-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.233784",
+    "triggered_by": "AP-TAX-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Compliance Hold \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.235038",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.236348",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.237575",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.238850",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "procurement@company.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.239938",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:47:42.241830",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-004",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-004 | Vendor: Mega Infrastructure Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-004\nVendor Name      : Mega Infrastructure Ltd\nPO Number        : PO-2026-004\nInvoice Amount   : INR 60,300,000"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.968048",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.969786",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.971433",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.973016",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.974590",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.978092",
+    "triggered_by": "AP-PO-003",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Routed for Approval \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.979556",
+    "triggered_by": "AP-TAX-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.980876",
+    "triggered_by": "AP-TAX-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Compliance Hold \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.982329",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.983776",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.985120",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.986438",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "procurement@company.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.987817",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:49:53.990964",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-004",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-004 | Vendor: Mega Infrastructure Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-004\nVendor Name      : Mega Infrastructure Ltd\nPO Number        : PO-2026-004\nInvoice Amount   : INR 60,300,000"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.459512",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.460778",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.461956",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.463217",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.464450",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-001",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-001 | Vendor: ABC Supplies Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-001\nVendor Name      : ABC Supplies Pvt Ltd\nPO Number        : PO-2026-001\nInvoice Amount   : INR 560,000 (if n"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.467310",
+    "triggered_by": "AP-PO-003",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Routed for Approval \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.468580",
+    "triggered_by": "AP-TAX-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.469997",
+    "triggered_by": "AP-TAX-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Compliance Hold \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.471462",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.472721",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.474119",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.475388",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "procurement@company.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.476747",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-003",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-003 | Vendor: Rogue Vendor Co",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-003\nVendor Name      : Rogue Vendor Co\nPO Number        : PO-2026-003\nInvoice Amount   : INR 260,000 (if numeri"
+  },
+  {
+    "timestamp": "2026-03-04T23:59:16.479127",
+    "triggered_by": "AP-PO-006",
+    "invoice_id": "INV-2026-004",
+    "recipients": [
+      "dept-head@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Held \u2014 Invoice INV-2026-004 | Vendor: Mega Infrastructure Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-004\nVendor Name      : Mega Infrastructure Ltd\nPO Number        : PO-2026-004\nInvoice Amount   : INR 60,300,000"
+  },
+  {
+    "timestamp": "2026-03-05T00:31:17.917762",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:31:17.919769",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "finance-controller@company.com",
+      "internal-audit@company.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:31:17.921152",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "relevant_stakeholder@company.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:31:17.922641",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "procurement@company.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:36:34.890495",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:36:34.890870",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:36:34.891131",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:36:34.891322",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T00:57:14.740502",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-TEST-204",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-TEST-204 | Vendor: Alpha Industrial Supplies Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-TEST-204\nVendor Name      : Alpha Industrial Supplies Ltd\nPO Number        : PO-2026-ALPHA\nInvoice Amount   : I"
+  },
+  {
+    "timestamp": "2026-03-05T00:57:14.741701",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-TEST-204",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-TEST-204 | Vendor: Alpha Industrial Supplies Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-TEST-204\nVendor Name      : Alpha Industrial Supplies Ltd\nPO Number        : PO-2026-ALPHA\nInvoice Amount   : I"
+  },
+  {
+    "timestamp": "2026-03-05T00:57:14.741875",
+    "triggered_by": "AP-GRN-002",
+    "invoice_id": "INV-2026-TEST-204",
+    "recipients": [
+      "recipient1@gmail.com",
+      "recipient2@gmail.com"
+    ],
+    "subject": "[AP Alert] Invoice Rejected \u2014 Invoice INV-2026-TEST-204 | Vendor: Alpha Industrial Supplies Ltd",
+    "delivered": true,
+    "simulated": true,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-TEST-204\nVendor Name      : Alpha Industrial Supplies Ltd\nPO Number        : PO-2026-ALPHA\nInvoice Amount   : I"
+  },
+  {
+    "timestamp": "2026-03-05T01:08:51.595817",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T01:09:11.603489",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T01:09:31.645753",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T01:09:51.653227",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T12:38:15.047677",
+    "triggered_by": "AP-PO-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Invoice Escalated \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T12:38:30.061416",
+    "triggered_by": "AP-NOT-004",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Critical Deviation \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T12:38:45.075313",
+    "triggered_by": "AP-NOT-001",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Send Notification \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  },
+  {
+    "timestamp": "2026-03-05T12:39:00.088341",
+    "triggered_by": "AP-PO-007",
+    "invoice_id": "INV-2026-CUSTOM",
+    "recipients": [
+      "ghoglejanhavi7@icloud.com"
+    ],
+    "subject": "[AP Alert] Flagged and Routed \u2014 Invoice INV-2026-CUSTOM | Vendor: Demo Vendor Pvt Ltd",
+    "delivered": false,
+    "simulated": false,
+    "body_preview": "\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n ACCOUNTS PAYABLE SYSTEM \u2014 DEVIATION NOTIFICATION\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nInvoice Number   : INV-2026-CUSTOM\nVendor Name      : Demo Vendor Pvt Ltd\nPO Number        : PO-2026-DEMO\nInvoice Amount   : INR 336,000 (i"
+  }
+]

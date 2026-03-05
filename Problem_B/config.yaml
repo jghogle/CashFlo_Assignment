@@ -1,0 +1,21 @@
+# ─────────────────────────────────────────────────────────────
+#  Cashflo NLP-to-SQL Engine — Configuration
+# ─────────────────────────────────────────────────────────────
+
+llm:
+  api_key: your-api-key-here
+
+database:
+  path: "cashflo_sample.db"
+  source_sql: "cashflo_sample_schema_and_data (1).sql"  # official SQL file — used by --setup-db
+
+semantic_layer:
+  path: "semantic_layer.yaml"  # relative to this file
+
+cache:
+  enabled: true
+  path: "output/query_cache.json"
+  similarity_threshold: 0.75   # 0-1; queries above this score reuse cached SQL
+
+conversation:
+  max_history: 10              # how many prior turns to include in context
